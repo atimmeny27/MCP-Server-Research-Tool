@@ -1,3 +1,5 @@
+# This is a preloaded example with git clone, you can delete this safely
+
 # Sources for: Anceint Scandinavia
 
 [The Nordic Bronze Age: Scandinavian Civilization Before the Viking Age](https://www.cambridge.org/core/books/abs/nordic-bronze-age/introduction/0F2A08F2D6F49EE0A12BC9D6F4E3B2CD) — A comprehensive academic book that provides a detailed overview of the Nordic Bronze Age, covering its technological, social, and cultural developments.

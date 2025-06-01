@@ -23,6 +23,7 @@ chmod +x start.sh
 ```bash
 python3 -m ensurepip --upgrade
 python3 -m pip install -r requirements.txt
+clear
 ```
 
 3. The tool is now verified, if you still need to setup an API go below. Anytime you wish to launch the program, enter
@@ -54,12 +55,16 @@ MCP_DURATION=long python send_to_claude.py
 
 10. Enter your topic, and wait up to 2 minutes for the LLM to research using primary sources, podcasts, pdfs, textbooks, and academic materials.
 
-9. If you see "✅ Saved context to context.json
-🔐 Using key: sk-or-v1-2 ...", it means it's currently researching
+9. If you see "🔐 Using key: sk-or-v1-2 ...", it means it's currently researching, even if it says "❌ Could not retrieve video."
 
 11. If you want to add this as a desktop tool, you can copy the "start.sh" contents (```open -e start.sh```),
    then paste them into a shell script inside the apple automator app.
 
+12. To start tool in the future you only need
+```bash
+cd MCP-Server-Research-Tool
+./start.sh
+```
 
 ### 🔑 How to Get Your Free OpenAI API Key
 
@@ -79,6 +84,7 @@ To use this tool, you’ll need a free API key from OpenRouter (or OpenAI / Anot
 
 4. To permanently keep this key active
 ```bash
+touch ~/.zshrc 
 open -e ~/.zshrc 
 ```
 5. Then paste ```export OPENROUTER_API_KEY="your-key-here-starting-with-sk-"``` at the end of the file, and save it
@@ -88,11 +94,13 @@ open -e ~/.zshrc
   open -e .env```
 paste here)
 
-    
+8. Start tool with ```./start.sh```, if you get any errors it probably means wikipedia's API is overloaded and cannot process your request, just try in a few minutes (or paste a traceback log to chat gpt if you want)
 8. Enter your topic, and wait up to 2 minutes for the LLM to research using primary sources, podcasts, pdfs, textbooks, and academic materials.
 
 9. If you see "✅ Saved context to context.json
 🔐 Using key: sk-or-v1-2 ...", it means it's currently researching
+
+   
 
 
 

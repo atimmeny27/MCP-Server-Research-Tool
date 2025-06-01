@@ -9,24 +9,31 @@ import re
 
 def fetch_wikipedia_summary(topic):
     try:
-        # Do a search and grab the best match
+        # First try Wikipedia API
         search_results = wikipedia.search(topic)
         if not search_results:
-            print(f"❌ No Wikipedia pages found for '{topic}'")
-            return None, None
+            raise wikipedia.exceptions.PageError(topic)
 
         best_match = search_results[0]
         summary = wikipedia.summary(best_match, sentences=5)
         page = wikipedia.page(best_match)
         return summary, page.url
-    except wikipedia.exceptions.DisambiguationError as e:
-        print(f"⚠️ Topic '{topic}' is too ambiguous. Try one of these:")
-        for option in e.options[:5]:
-            print(f" - {option}")
-        return None, None
-    except wikipedia.exceptions.PageError:
-        print(f"❌ No page found for '{topic}'. Try another topic.")
-        return None, None
+    except (wikipedia.exceptions.WikipediaException, wikipedia.exceptions.PageError) as e:
+        print(f"\n⚠️ Wikipedia API error: {str(e)}")
+        print("Using fallback description...")
+        
+        # Load existing context to check if a description has been made
+        try:
+            with open("context.json", "r") as f:
+                existing_context = json.load(f)
+                if existing_context.get("wikipedia", {}).get("summary"):
+                    return existing_context["wikipedia"]["summary"], ""
+        except (json.JSONDecodeError, FileNotFoundError):
+            pass
+            
+        # If no existing context, use a generic fallback
+        fallback_summary = f"Unable to fetch Wikipedia summary for '{topic}'. This topic typically refers to historical, cultural, or scientific concepts related to {topic}. Please refer to other sources for accurate information."
+        return fallback_summary, ""
 
 
 def fetch_youtube_summary_link(topic):

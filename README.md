@@ -44,7 +44,14 @@ MCP_DURATION=long python send_to_claude.py
 
 8. Please be specific with dates, times, geography, people, etc... and just rename the markdown (.md) file so they arent 100 characters long.
 
-9. If you want to add this as a desktop tool, you can copy the "start.sh" contents (```open -e start.sh```),
+9. Once it's done, you can scroll through in the terminal, or search for "whatever-your-search-was.md" in finder, this will pull up the notes as well as sources used. This outputs into markdown, so its best to open the notes in a markdown friendly editor (like obsidian)
+
+10. Enter your topic, and wait up to 2 minutes for the LLM to research using primary sources, podcasts, pdfs, textbooks, and academic materials.
+
+9. If you see "✅ Saved context to context.json
+🔐 Using key: sk-or-v1-2 ...", it means it's currently researching
+
+11. If you want to add this as a desktop tool, you can copy the "start.sh" contents (```open -e start.sh```),
    then paste them into a shell script inside the apple automator app.
 
 
@@ -81,6 +88,5 @@ paste here)
 9. If you see "✅ Saved context to context.json
 🔐 Using key: sk-or-v1-2 ...", it means it's currently researching
 
-10. Once it's done, you can scroll through in the terminal, or search for "whatever-your-search-was.md" in finder, this will pull up the notes as well as sources used.
 
 

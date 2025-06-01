@@ -4,7 +4,7 @@
 read -p "Enter your research topic: " topic
 
 # Generate context
-python MCP_assistant.py "$topic"
+python3 MCP_assistant.py "$topic"
 
 # Call the model with 'long' duration for better research
-MCP_DURATION=long python send_to_claude.py
+MCP_DURATION=long python3 send_to_claude.py

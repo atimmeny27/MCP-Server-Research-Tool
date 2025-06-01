@@ -2,8 +2,19 @@ import json
 import openai
 import os
 
+# Set API key and endpoint
 openai.api_key = os.environ.get("OPENROUTER_API_KEY")
 openai.api_base = "https://openrouter.ai/api/v1"
+
+# Ensure context.json exists and is valid
+if not os.path.exists("context.json") or os.path.getsize("context.json") == 0:
+    print("⚠️ context.json missing or empty — generating blank context.")
+    with open("context.json", "w") as f:
+        json.dump({
+            "topic": "",
+            "wikipedia": {"summary": ""},
+            "youtube": {"link": ""}
+        }, f)
 
 def load_context():
     with open("context.json", "r") as f:

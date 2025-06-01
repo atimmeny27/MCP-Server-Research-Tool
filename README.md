@@ -36,7 +36,15 @@ MCP_DURATION=long python send_to_claude.py
 ```
 
 5. Step 3 is just a script to automate 4, they accomplish the same thing.
-6. If you want to add this as a desktop tool, you can copy the "start.sh" contents (```open -e start.sh```),
+
+
+6. I hope you find this helpful and a fun tool to learn with. To edit the research prompt, look around lines 18-220 in send_to_claude.py. It will be the long f-string where the intructions are sent to Claude.
+
+7. The more specific the research topic, the better the results will be (ex. "AI" vs “The Evolution of Machine Learning into Large Language Models and Modern AI (1950–2024): Key breakthroughs, paradigms, and societal impact”
+
+8. Please be specific with dates, times, geography, people, etc... and just rename the markdown (.md) file so they arent 100 characters long.
+
+9. If you want to add this as a desktop tool, you can copy the "start.sh" contents (```open -e start.sh```),
    then paste them into a shell script inside the apple automator app.
 
 
@@ -50,7 +58,7 @@ To use this tool, you’ll need a free API key from OpenRouter (or OpenAI / Anot
 ➡️ Create an account or log in with Google/GitHub.
 
 2. Generate an API Key
-	•	After logging in, click your profile icon → “API Keys”
+	•	After logging in, click your profile icon → “Keys”
 	•	Click “Create Key” and copy the resulting string (starts with sk-or-...)
 	•	Save it somewhere safe
 
@@ -75,4 +83,4 @@ paste here)
 
 10. Once it's done, you can scroll through in the terminal, or search for "whatever-your-search-was.md" in finder, this will pull up the notes as well as sources used.
 
-11. I hope you find this helpful and a fun tool to learn with. To edit the research prompt, look around lines 18-220 in send_to_claude.py. It will be the long f-string where the intructions are sent to Claude.
+

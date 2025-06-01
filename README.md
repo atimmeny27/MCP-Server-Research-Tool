@@ -19,6 +19,11 @@ cd MCP-Server-Research-Tool
 chmod +x start.sh
 ```
 
+4. Then ```bash
+python3 -m ensurepip --upgrade
+python3 -m pip install -r requirements.txt
+```
+
 3. The tool is now verified, if you still need to setup an API go below. Anytime you wish to launch the program, enter
 
 ```bash

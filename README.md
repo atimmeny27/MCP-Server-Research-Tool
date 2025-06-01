@@ -8,7 +8,7 @@ A long-form research assistant tool powered by LLMs, designed to gather informat
 
 To get started on macOS:
 
-You will need a free API key from OpenAI, scroll to bottom if you don't have a dedicated one for this project. 
+You will need a free API key from OpenRouter or another source, scroll to bottom after step 2 if you don't have a dedicated one for this project. 
 
 1. Open **Terminal** (`⌘ + Space`, type `Terminal`, hit Enter).
 2. Run the following commands:

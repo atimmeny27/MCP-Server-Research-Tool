@@ -19,7 +19,7 @@ cd MCP-Server-Research-Tool
 chmod +x start.sh
 ```
 
-3. The tool is now verified, anytime you wish to launch the program, enter
+3. The tool is now verified, if you still need to setup an API go below. Anytime you wish to launch the program, enter
 
 ```bash
 ./start.sh
@@ -61,7 +61,7 @@ To use this tool, you’ll need a free API key from OpenRouter (or OpenAI / Anot
 open -e ~/.zshrc 
 ```
 5. Then paste ```export OPENROUTER_API_KEY="your-key-here-starting-with-sk-"``` at the end of the file, and save it
-6. Now paste ```source ~/.zshrc``` in your terminal or refresh the session.
+6. Now paste ```source ~/.zshrc``` in your terminal or refresh the session. You can now start the tool with ```./start.sh```
 
 7. If you plan on using other projects with API keys in terminal, you may want to do step 3 inside of a .env file in this root directory(```touch .env
   open -e .env```
@@ -70,7 +70,8 @@ paste here)
     
 8. Enter your topic, and wait up to 2 minutes for the LLM to research using primary sources, podcasts, pdfs, textbooks, and academic materials.
 
-9. If you see "", it means it's currently researching
+9. If you see "✅ Saved context to context.json
+🔐 Using key: sk-or-v1-2 ...", it means it's currently researching
 
 10. Once it's done, you can scroll through in the terminal, or search for "whatever-your-search-was.md" in finder, this will pull up the notes as well as sources used.
 

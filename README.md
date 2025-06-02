@@ -53,7 +53,7 @@ MCP_DURATION=long python send_to_claude.py
 
 9. Once it's done, you can scroll through in the terminal, or search for "whatever-your-search-was.md" in finder, this will pull up the notes as well as sources used. This outputs into markdown, so its best to open the notes in a markdown friendly editor (like obsidian)
 
-10. Enter your topic, and wait up to 2 minutes for the LLM to research using primary sources, podcasts, pdfs, textbooks, and academic materials.
+10. Enter your topic, and wait up to 2 minutes for the LLM to research using primary sources, podcasts, pdfs, textbooks, and academic materials. This is being forwarded to Claude, so spelling errors or niche topics may still cause confusion.
 
 9. If you see "🔐 Using key: sk-or-v1-2 ...", it means it's currently researching, even if it says "❌ Could not retrieve video."
 
